@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>NLP Overview</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<style>
+		.flex {
+			display: -webkit-flex; /* Safari */
+			display: flex;
+		}
+		.flex div {
+			-webkit-flex: 1;  /* Safari 6.1+ */
+			-ms-flex: 1;  /* IE 10 */
+			flex: 1;
+		}
+
+		.invisible { visibility: hidden }
+    .white { color: white }
+    .blue  { color: rgb(38, 139, 210) }
+    .green { color: greenyellow}
+    .red   { color: red }
+	</style>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="img/text-bg.jpg">
+					<section data-background="img/text-bg.jpg">
+						<h3>Modern NLP Tools</h3>
+						<h4>An overview</h4>
+            <br><br>  
+            <span>ThinSoft - 11/4/2019</span><div style="display: inline-block; width: 250px"></div> <span>by Giorgio Sidari</span>
+						<br>
+
+					</section>
+					<section>
+						<h2>Me</h2>
+						<div class="flex">
+							<div>
+								<img src="img/sidari.png" style="width: 50%; background-color: white">
+							</div>
+							<div>
+								<div class="invisible">.</div>
+								<div><strong>Giorgio Sidari</strong></div>
+								<!--<div class="invisible">.</div>-->
+								<div class=""><strong>Software & Data Engineer</strong></div>
+								<div class="invisible">.</div>
+								<div>NLP - Chatbots</div>
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+					</section>
+					<section>
+            <h2>Chatbots</h2>
+            <div class="flex">
+              <div class="fragment fade-up">
+                <img src="img/travelchat-rome.png" style="width: 50%; background-color: white">
+                <div>
+                  Conversational UI
+                </div>
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/lorella-mockup.png" style="width: 50%">
+                <div>
+                  Language understanding
+                </div>
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/advanced-assistant.png" style="width: 50%; background-color: white">
+                <div>
+                  Advanced support
+                </div>
+              </div>
+            </div>
+          </section>
+				</section>
+        <section data-background="img/text-bg.jpg">
+					<section>
+            <h2>Machine learning for NLP</h2>
+          </section>
+          <section>
+            <h2>Regression</h2>
+            <h4>Predicts the next element in a data series</h4>
+            <!--<br style="font-size: .5em" />-->
+            <div><em>"Open your umbrella, it's..."</em></div>
+            <ul>
+              <li>blue</li>
+              <li>five</li>
+              <li class="fragment highlight-blue">raining</li>
+              <li>you</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Classification</h2>
+            <h4>Gives a sample a label in pre-defined set</h4>
+            <div class="flex">
+              <div class="">
+                <div><em>Landed now</em></div>
+                <div><em>They lost my luggage</em></div>
+                <div><em>Very polite crew</em></div>
+              </div>
+              <div class="">
+                <div class="">Neutral</div>
+                <div class="red">Negative</div>
+                <div class="green">Positive</div>
+              </div>
+            </div>
+
+          </section>
+          <section>
+            <h2>Clustering</h2>
+            <h4>Discovers similar samples in a population</h4>
+            <img src="img/clustering.png" style="width: 50%">
+          </section>
+          <section>
+            <h2>Generation</h2>
+            <h4>Produces a complex output from a number</h4>
+            <img src="img/stylegan.png" style="width: 50%">
+          </section>
+					<section>Examples</section>
+				</section>
+        <section data-background="img/text-bg.jpg">
+					<section>
+            <h2>Word embeddings</h2>
+            <div>How can we represent mathematically</div>
+            <div><span class="blue">similarity</span> and <span class="blue">distance</span></div>
+            <div>between the <span class="green">meanings</span> of words?</div>
+          </section>
+          <section>
+            <h2>Doc2Vec - 2013</h2>
+                <img src="img/vectorization.png" style="width: 80%; background-color: white">
+          </section>
+          <section>
+            <h2>Doc2Vec - 2013</h2>
+            <h3>CBoW - Skip-grams</h3>
+            <div class="flex">
+              <div class="">
+                <div>
+                  Suitable words are inferred from the context</b>
+                </div>
+                <div>
+                  (or the other way around)</b>
+                </div>
+                <div>
+                  and <b class="fragment highlight-blue">discriminated from noise words.</b>
+                </div>
+              </div>
+              <div class="">
+                <img src="img/CBOW.png" style="width: 80%; background-color: white">
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2>New capabilities</h2>
+            <p>Exploiting latent semantics representation</p>
+            <div class="flex">
+              <div>
+                <img src="img/vectors-ruler.png" style="width:75%; background-color: white">
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/vectors-tense.png" style="width:70%; background-color: white">
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/vectors-capital.png" style="width:84%; background-color: white">
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2>GloVe - 2014</h2>
+            <div>Slightly faster</div>
+            <div>Easier to parallelize</div>
+            <div>Count-based approach</div>
+          </section>
+          <section>
+            <h2>FastText - 2017</h2>
+            <img src="img/ngrams.png" style="width: 70%; background-color: white">
+          </section>
+          <section>
+            <h2>ELMo - 2018</h2>
+            <div>Vectors are saved with their embedding</div>
+          </section>
+          <section data-background="#ff8800">
+            <h2>BERT - 2018</h2>
+            <img src="img/bert-attention.png" style="width: 70%; background-color: white">
+          </section>
+          <section>
+            <h2>Transfer learning</h2>
+            <br />
+            <div><em>"Don't try to be a hero"</em></div>
+            <div><em>Andrej Karpathy</em></div>
+          </section>
+				</section>
+        <section data-background="img/text-bg.jpg">
+          <section>
+            <h2>Sentence embeddings</h2>
+            <div>Can we </div>
+            <div><span class="blue">extend</span> the concept of <span class="blue">embedding</span></div>
+            <div>to <span class="green">whole sentences</span>?</div>
+          </section>
+          <section>
+            <h2>Bag of Words (BoW)</h2>
+            <h4>Frequency of terms across documents</h4>
+            <ol>
+              <li>I love dogs</li>
+              <li>I hate dogs and knitting</li>
+              <li>Knitting is my hobby and my passion</li>
+              <img src="img/bow.png" style="width:70%; background-color: white">
+            </ol>
+          </section>
+          <section>
+            <h2>TF-IDF</h2>
+            <h4>Weighted BoW</h4>
+            <ol>
+              <li>I love dogs</li>
+              <li>I hate dogs and knitting</li>
+              <li>Knitting is my hobby and my passion</li>
+              <img src="img/if-idf.png" style="width:70%; background-color: white">
+            </ol>
+          </section>
+          <section>
+            <h2>Skip-thoughts</h2>
+            <img src="img/skip-thoughts.png" style="width: 70%; background-color: white">
+            <div>word2vec extension</div>
+          </section>
+          <section>
+            <h2>Quick-thoughts</h2>
+            <div class="flex">
+              <div class="">
+                <div>
+                  Skip-gram equivalent for sentences</b>
+                </div>
+              </div>
+              <div class="">
+                <img src="img/quick-thoughts.png" style="width:70%; background-color: white">
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2>InferSent - 2017</h2>
+            <div class="">
+              <img src="img/infersent.png" style="width:70%; background-color: white">
+            </div>
+          </section>
+          <section>
+            <h2>Generalizations</h2>
+            <ul>
+              <li>Purpose Sentence Representation - 2018</li>
+              <li>Google's Universal Sentence Encoder - 2018</li>
+            </ul>
+            <img src="img/sentence-embeddings.png" style="width:50%; background-color: white">
+          </section>
+          <section>
+            <h2>State of the art</h2>
+            <div class="flex">
+              <div class="">
+                <div>
+                  Question answering frontiers are moving further</b>
+                </div>
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/SQuAD.png" style="width:70%; background-color: white">
+                <div>Simple QA</div>
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/CoQA.png" style="width: 50%; background-color: white">
+                <div>Conversational QA</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2>Benchmarks</h2>
+            <div class="flex">
+              <div class="">
+                <div>
+                  How is progress evaluated?</b>
+                </div>
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/CoQA.png" style="width:70%; background-color: white">
+                <div>CoQA</div>
+              </div>
+              <div class="fragment fade-up">
+                <img src="img/inference-animated.gif" style="width: 100%; background-color: white">
+                <div>HotpotQA</div>
+                <div class="white"><em><small>"Where was Yahoo! founded?"</small></em></div>
+              </div>
+            </div>
+          </section>
+
+        </section>
+        <section data-background="img/text-bg.jpg">
+          <section>
+            <h2>Machine translation</h2>
+            <img src="img/mt1.png" style="width: 70%; background-color: white">
+            <img src="img/mt2.png" style="width: 70%; background-color: white">
+          </section>
+          <section data-background="img/text-bg.png">
+            <h2>MT approaches</h2>
+            <p class="">Linguistic</p>
+            <p class="fragment fade-left">Statistics (1980s)</p>
+            <p class="fragment fade-left">...and ANN of course (2014)</p>
+          </section>
+          <section data-background="img/text-bg.png">
+            <h2>ANN architecture for MT</h2>
+            <img src="img/Autoencoder.png" style="width:70%; background-color: white">
+          </section>
+          <section data-background="img/text-bg.png">
+            <h2>MT Resources</h2>
+            <p>Opus - EU documents</p>
+            <img src="img/opus.png" style="width:70%; background-color: white">
+          </section>
+          <section data-background="img/text-bg.png">
+            <h2>MT Resources</h2>
+            <p>Common Crawl</p>
+            <img src="img/common-crawl.png" style="width:70%; background-color: white">
+          </section>
+          <section data-background="img/text-bg.png">
+            <h2>THE SAINT GRAAL</h2>
+            <h4>ML Explainability</h4>
+            <p class="fragment fade-left">Variational autoencoders</p>
+            <p class="fragment fade-left">Graph representations</p>
+          </section>
+        </section>
+        <section data-background="img/text-bg.jpg">
+          <section data-background="img/text-bg.jpg">
+            Time for a
+            <h2>Round table</h2>
+            <p class="fragment fade-out">Thanks for your attention</p>
+            <p class="fragment fade-up">Let's discuss applications</p>
+          </section>
+        </section>
+        <section data-background="img/text-bg.jpg">
+					<section>Backup</section>
+					<section>
+            <h2>Graphs</h2>
+            <div>allow automated reasoning</div>
+            <img src="img/iceland.png" style="width:60%; background-color: white">
+          </section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
