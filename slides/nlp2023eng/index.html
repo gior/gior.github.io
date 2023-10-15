@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>NLP nella pratica professionale</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>	
+	<style>
+    .reveal h3 { color: hsl(200, 84%, 71%) }
+
+		.flex {
+			display: -webkit-flex; /* Safari */
+			display: flex;
+		}
+		.flex div {
+			-webkit-flex: 1;  /* Safari 6.1+ */
+			-ms-flex: 1;  /* IE 10 */
+			flex: 1;
+		}
+
+		.absolute { position: absolute }
+		.relative { position: relative }
+		.left-0   { left: 0 }
+		.right-0  { right: 0 }
+		.w-full   { width: 100%	}
+
+		.mt-1   { margin-top: 0.25rem	}
+		.mt-2   { margin-top: 0.5rem	}
+		.mt-3   { margin-top: 0.75rem	}
+		.mt-4   { margin-top: 1rem }
+		.mt-6   { margin-top: 1.5rem }
+		.mt-8   { margin-top: 2rem }
+		.mt-10  { margin-top: 2.5rem }
+		.mt-12  { margin-top: 3rem }
+
+    .text-xs { font-size: 0.6rem }
+    .text-sm { font-size: 0.8rem }
+    .text-md { font-size: 1rem }
+    .text-sm { font-size: 1.4rem }
+    .text-sm { font-size: 2rem }
+
+		.invisible { visibility: hidden }
+    .white { color: white }
+    .blue  { color: #268bd2 }
+    .green { color: greenyellow}
+    .grey  { color: grey}
+    .red   { color: red }
+	</style>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+
+
+				<section data-background="img/text-bg.jpg">
+					<section data-background="img/text-bg-bright.jpg">
+					</section>
+
+					<section>
+						<h3>L’ELABORAZIONE DEL LINGUAGGIO NATURALE PER L’INGEGNERIA</h3>
+						<p class="fragment">Capire e utilizzare l'NLP nella pratica professionale</p>
+            <br><br>
+						<div class="w-full relative">
+							<span class="absolute left-0">Ordine degli Ingegneri</span> <span class="absolute right-0">30/9/2023</span>
+						</div>
+						<br>
+						<div class="w-full relative">
+							<span class="absolute left-0">Como</span> <span class="absolute right-0">Giorgio Sidari</span>
+						</div>
+
+						<aside class="notes">
+							<div>Grazie Ordine</div>
+							<div>Grazie Ing. d'Ambrosio</div>
+							<div>Grazie a VOI</div>
+							<div></div>
+							<div>- Taglio pratico</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Relatore</h3>
+            <div class="invisible">.</div>
+            <div class="flex">
+							<div>
+								<img src="img/sidari.png" style="width: 50%; background-color: white">
+							</div>
+							<div>
+								<!-- <div class="invisible">.</div> -->
+								<div><strong>Giorgio Sidari</strong></div>
+								<!-- <div class="invisible">.</div> -->
+								<div class=""><strong>Software &amp; ML Engineer</strong></div>
+								<div class="invisible">.</div>
+								<div class="text-sm">www.sidari.it</div>
+								<div class="text-sm">www.linkedin.com/in/sidari</div>
+								<div class="text-sm">@ideaferace@mastodon.uno</div>
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Acquisti</div>
+							<div>SW</div>
+							<div>Chatbot</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Obiettivi</h3>
+						<div>Panoramica delle possibilità</div>
+						<div class="fragment">In italiano</div>
+						<div class="fragment">Produttività individuale</div>
+						<div class="fragment">Prospettiva industriale</div>
+
+						<aside class="notes">
+							<div>Panoramica possibilità</div>
+							<div>ITALIANO</div>
+							<div>Produttività individuale</div>
+							<div>Prospettiva industriale</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Sommario</h3>
+						<div>Definizione e cenni storici</div>
+						<div>Problemi pratici</div>
+						<div>Strumenti</div>
+						<div>Approfondimento su LLM</div>
+						<div>Privacy e proprietà intellettuale</div>
+					</section>
+				</section>
+
+
+
+				<section data-background="img/text-bg.jpg">
+					<section data-background="img/text-bg.jpg">
+						<h3>NLP</h3>
+						<p class="">Definizione e cenni storici</p>
+            <blockquote class="fragment" cite="https://it.wikipedia.org/wiki/Elaborazione_del_linguaggio_naturale">
+              Tratta l'interazione tra i computer e il linguaggio umano <span class="text-xs grey">Wikipedia</span>
+            </blockquote>
+            <div class="flex fragment">
+							<div>
+								<img src="img/nlp1.png" style="width: 60%; background-color: none">
+							</div>
+						</div>
+
+
+						<aside class="notes">
+							<div>NeuroLinguistic Programming! :D</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Perché elaborare il linguaggio?</h3>
+            <div class="fragment">
+							<div>I testi sono ovunque</div>
+							<div>Possiamo sfruttarli meglio</div>
+            </div>
+
+						<aside class="notes">
+							<div>Perché muovere i telai con il vapore?</div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Comprensione del linguaggio (NLU)</h3>
+						<p class="">Come rendere utilizzabili gli input testuali?</p>
+            <div class="flex">
+							<div>
+								<img src="img/nlp2-nlu.png" style="width: 60%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Vediamo ora alcune categorie di compiti, a partire da</div>
+							<div>ES: quali istruzioni?</div>
+							<div>ES: quali concetti?</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Generazione del linguaggio (NLG)</h3>
+						<p class="">Come produrre testi corretti e sensati?</p>
+            <div class="flex">
+							<div>
+								<img src="img/nlp3-nlg.png" style="width: 60%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Dettagli nella quarta sezione</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Trascrizione e sintesi vocale</h3>
+            <div class="flex">
+							<div>
+								<img src="img/nlp4-stts.png" style="width: 100%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Attività imparentate</div>
+							<div>ES: assistente vocale</div>
+							<div>Non solo testo quindi, anche voce</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>NLP simbolica e grammaticale</h3>
+						<div class="fragment">Anni 40: Scarsi risultati</div>
+						<div class="fragment">Teoria linguistica (Chomsky)</div>
+						<div class="fragment">Anni 60: Padronanza di domini specifici</div>
+						<div class="fragment">Anni 70: Utilizzo di ontologie</div>
+
+						<aside class="notes">
+							<div>Anni 40 traduzione</div>
+							<div>Chomsky</div>
+							<div>ELIZA '67 - psicoterapeuta</div>
+							<div>SHRDLU '68- world of blocks</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>NLP statistica</h3>
+            <div>Diffusione e aumento della potenza di calcolo</div>
+            <div class="fragment">Anni 90: Grande disponibilità di dati</div>
+            <div class="invisible">.</div>
+            <div class="fragment">N-grammi <span style="display: inline-block; margin-left: 2rem" class="fragment fade-left blue"> T9 </span></div>
+
+						<aside class="notes">
+							<div>Chomsky alla prova</div>
+							<div>Canada & EU</div>
+							<div>WWW</div>
+							<div>- T9</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>NLP neurale/vettoriale</h3>
+						<p class="">Reti neurali per compiti statistici</p>
+						<p class="fragment">Raggruppamento in base al contesto → <strong class="">Semantica</strong></p>
+						<div class="fragment mt-8">
+							<p>جدار ال<span class="blue">محطّة</span> أبيض</p>
+							<p>جدار ال<span class="green">غرفة</span> أبيض</p>
+							<p>جدار ال<span class="red">منزل</span> أبيض</p>
+						</div>
+
+						<aside class="notes">
+							<div>Statisica glorificata</div>
+							<div>- 2003: MLP > n-gram</div>
+							<div>- 2013: Word2Vec</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Word2Vec (2013)</h3>
+            <div class="flex">
+							<div>
+								<img src="img/word2vec-paper.png" style="width: 100%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Fioritura chatbot</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Word2Vec</h3>
+            <div class="flex">
+							<div>
+								<img src="img/clustering.png" style="width: 100%; background-color: none">
+                <div>Somiglianza</div>
+
+							</div>
+							<div class="fragment">
+								<img src="img/vectors-ruler.png" style="width: 62%; background-color: none">
+                <div>Additività</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>- Somiglianza</div>
+							<div>- Additività (poi trascurata)</div>
+							<div>- TUTTO E' VETTORE</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Gioco: Semantle</h3>
+						<div>
+							<img src="img/semantle.png" style="width: 80%; background-color: none">
+						</div>
+						<div>
+							<a class="text-xs grey" target="_blank" href="https://semantle.com/">
+								semantle.com
+							</a>
+						</div>
+					</section>
+
+					<section>
+						<h3>NLP con transformer (2017)</h3>
+            <div class="flex">
+							<div>
+								<img src="img/attention-is-all-you-need.png" style="width: 100%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>2017: Attention!</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Transformer</h3>
+            <div class="flex">
+							<div>
+								<img src="img/transformer-architecture.png" style="width: 40%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Una parola e la sua storia</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>L'ecosistema dei modelli linguistici</h3>
+						<div class="fragment">e <a href="https://huggingface.co/models" target="_blank">non solo</a></div>
+            <div class="flex fragment">
+							<div>
+								<img src="img/huggingface.png" style="width: 80%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Fioritura</div>
+							<div>- centralizzazione, per vari domini applicativi</div>
+							<div>- Huggingface</div>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section data-background="img/text-bg.jpg">
+					<section data-background="img/text-bg.jpg">
+						<h3>Ricerca ed estrazione di informazioni da documenti</h3>
+						<p class=""></p>
+
+						<aside class="notes">
+							<div>Categorie di problemi</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Classificazione</h3>
+            <div class="flex fragment">
+							<div>
+								<img src="img/classification.png" style="width: 65%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>METTERE ETICHETTE</div>
+							<div>Argomenti di un contenuto</div>
+							<div>Spam</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Monitoraggio della reputazione</h3>
+            <blockquote class="">
+              "Da abbonato a ##### credo che il servizio che stanno offrendo faccia schifo"
+            </blockquote>
+            <blockquote class="">
+              "@utente Io ci ho preso #### e ####. Ottima esperienza e prezzi buoni"
+            </blockquote>
+
+						<aside class="notes">
+							<div>Caso particolare classificazione</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Capire le intenzioni</h3>
+						<p class="">Tradurre una frase in un comando </p>
+            <blockquote class="fragment">
+              "Voglio parlare con un operatore!" 🤬
+            </blockquote>
+            <blockquote class="fragment">
+              "Spegni la luce in cucina"
+            </blockquote>
+            <blockquote class="fragment">
+              "Prenota una sala per domani alle 10"
+            </blockquote>
+
+						<aside class="notes">
+							<div>Secondo voi come funziona?</div>
+							<div>- - Sempre pronti con l'OPERATORE!</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Confronto di testi</h3>
+						<div>Somiglianza</div>
+						<div>Pertinenza</div>
+
+						<aside class="notes">
+							<div>Misura della pertinenza</div>
+							<div>Controllo plagio?</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Ricerca di risposte in un testo</h3>
+						<div>Dato un tema...</div>
+						<div class="fragment">rintracciare i passi che ne parlano</div>
+
+						<aside class="notes">
+							<div>Estrazione stringhe esatte</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Generazione di domande relative a un testo</h3>
+						<div>Motori di ricerca</div>
+						<div class="fragment">Quiz</div>
+						<div class="fragment">Domande guida</div>
+
+						<aside class="notes">
+
+							<aside class="notes">
+								<div>Funzione alla base dei motori di ricerca</div>
+							</aside>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Generazione di testi</h3>
+						<div>Chat</div>
+						<div>Report</div>
+						<div>Brochure, descrizione prodotti
+						<div>Offerte</div>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>Riassunto</h3>
+						<div>Executive summary</div>
+						<div>Screening documenti</div>
+
+						<aside class="notes">
+							<div>Accesso rapido a info chiave</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Traduzione</h3>
+						<div class="fragment">Scouting di prodotti</div>
+						<div class="fragment">Rassegna stampa</div>
+						<div class="fragment" style="text-decoration: line-through;">Contrattualistica</div>
+
+						<aside class="notes">
+							<div>Gamma di usi secondo la qualità</div>
+							<div>- SENSO SUPERFICIALE</div>
+							<div>- comunicazione GENERICA</div>
+							<div>- padronanza anche in ambito SPECIALISTICO</div>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section data-background="img/text-bg.jpg">
+					<section>
+						<h3>Strumenti</h3>
+						<p class="fragment fade-up">per l'analisi del sentimento</p>
+						<p class="fragment fade-up">il riassunto automatico</p>
+						<p class="fragment fade-up">la traduzione</p>
+						<p class="fragment fade-up">...</p>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>...ed esempi pratici!</h3>
+
+						<aside class="notes">
+							<div>Sono baseline, on prod</div>
+							<div>ITA</div>
+							<div>Tempo!</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Librerie di NLP</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Libreria</th>
+                  <th>Linguaggio</th>
+                  <th class="grey">Autore</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SpaCy</td>
+                  <td>Python</td>
+                  <td class="grey">Explosion.ai</td>
+                </tr>
+                <tr>
+                  <td>NLTK</td>
+                  <td>Python</td>
+                  <td class="grey">nltk.org</td>
+                </tr>
+                <tr>
+                  <td>CoreNLP</td>
+                  <td>Java</td>
+                  <td class="grey">Stanford</td>
+                </tr>
+                <tr>
+                  <td>Stanza</td>
+                  <td>Python</td>
+                  <td class="grey">Stanford</td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td class="grey">...</td>
+                </tr>
+              </tbody>
+            </table>
+
+						<aside class="notes">
+							<div>Python >> Java</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>SpaCy </h3>
+            <div class="flex fragment">
+							<div>
+								<img src="img/spacy-homepage.png" style="width: 65%; background-color: none">
+                <div class="text-xs grey">Documentazione SpaCy</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>One-stop-shop</div>
+							<div>Document parsing</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>SpaCy </h3>
+            <div class="flex">
+							<div>
+								<img src="img/spacy-pipelines.png" style="width: 65%; background-color: none">
+                <div class="text-xs grey">Documentazione SpaCy</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>SpaCy </h3>
+            <div>Analisi logica e grammaticale</div>
+            <div class="flex">
+							<div>
+								<img src="img/spacy-displacy.png" style="width: 100%; background-color: none">
+                <div class="text-xs grey">Documentazione SpaCy</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>DisplaCy</div>
+						</aside>
+					</section>
+
+					<section>
+            <h3>SpaCy </h3>
+            <div>Estrazione entità</div>
+            <div class="flex">
+							<div>
+								<img src="img/spacy-ner.png" style="width: 100%; background-color: none">
+                <div class="text-xs grey">Documentazione SpaCy</div>
+							</div>
+						</div>
+
+            <aside class="notes">
+              <div>Anche transformer</div>
+              <div>Anche LLM</div>
+            </aside>
+          </section>
+
+					<section>
+						<h3>ESEMPIO: Analisi del sentimento</h3>
+						<p class="fragment fade-up">Flusso di post dai social</p>
+						<p class="fragment fade-up">Selezione dei post rilevanti</p>
+						<p class="fragment fade-up">Etichettatura</p>
+						<p class="fragment fade-up">Report</p>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Chatbot (essenziale)</h3>
+						<p class="fragment fade-up">Frase dell'utente</p>
+						<p class="fragment fade-up">Individuazione dell'intento</p>
+						<p class="fragment fade-up">Estrazione delle entità</p>
+						<p class="fragment fade-up">Azione e risposta</p>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Framework focalizzati sui transformer</h3>
+						<p class="">Come sfruttare dati non strutturati?</p>
+						<p class="fragment fade-up">Focus su indicizzazione</p>
+						<p class="fragment fade-up">Grande offerta cloud</p>
+
+						<aside class="notes">
+							<div>Data lake (dal datawarehouse)</div>
+							<div>Focus su indicizzazione</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Haystack </h3>
+            <div class="flex">
+							<div>
+								<img src="img/haystack-interfaces.png" style="width: 65%; background-color: none">
+                <div class="text-xs grey">Homepage Haystack</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Esempio open source</div>
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Haystack </h3>
+            <div class="flex">
+							<div>
+								<img src="img/haystack-features.png" style="width: 100%; background-color: none">
+                <div class="text-xs grey">Homepage Haystack</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Task supportati quasi tutti da LLM</div>
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>ESEMPIO: Trovare risposte in un testo</h3>
+            <div class="flex">
+							<div>
+								<img src="img/haystack-pipeline.png" style="width: 100%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Meh, ma migliorabile</div>
+							<div>VELOCITA'</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>ESEMPIO: Domande relative a testi</h3>
+
+            <div class="flex">
+							<div>
+								<ul style="padding-top: 5rem; padding-right: 1em;">
+									<li>Linee guida</li>
+									<li class="fragment">Generazione di test</li>
+								</ul>
+								<div class="fragment">
+									<a class="text-xs grey" target="_blank" href="https://huggingface.co/it5/it5-large-question-generation?text=L%27+American+Broadcasting+Company+%28ABC%29+%28stlized+nel+suo+logo+come+abc+dal+1957%29+%C3%A8+una+rete+televisiva+commerciale+americana+trasmissione+televisiva+che+%C3%A8+di+propriet%C3%A0+del+Disney-ABC+Television+Group%2C+una+controllata+della+divisione+Disney+Media+Networks+di+The+Walt+Disney+Company.+La+rete+fa+parte+delle+grandi+reti+televisive+Big+Three.+La+rete+ha+sede+a+Columbus+Avenue+e+West+66th+Street+a+Manhattan%2C+con+ulteriori+uffici+e+stabilimenti+di+produzione+a+New+York+City%2C+Los+Angeles+e+Burbank%2C+California.+Risposta%3A+Manhattan">
+										IT5 Large for Question Generation
+									</a>
+								</div>
+							</div>
+							<div class="fragment">
+								<img src="img/transformer-qg.png" style="width: 100%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>MOTORI DI RICERCA</div>
+							<div>Supporto alla redazione di procedure</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>ESEMPIO: Riassunto</h3>
+            <div class="flex">
+							<div style="padding-top: 11rem; padding-right: 1em;">
+								<div>Brani più significativi</div>
+								<div class="fragment">
+									<a class="text-xs grey" target="_blank" href="https://huggingface.co/it5/it5-base-news-summarization?text=Gianmarco+Tamberi+ha+vinto+la+medaglia+d%E2%80%99oro+nel+salto+in+alto+ai+Mondiali+di+atletica+leggera+in+corso+a+Budapest.+Nella+finale+disputata+marted%C3%AC+sera+e+durata+circa+due+ore%2C+Tamberi+ha+raggiunto+al+primo+tentativo+la+misura+di+2+metri+e+36+centimetri%2C+la+stessa+dello+statunitense+JuVaughn+Harrison%2C+che+per%C3%B2+l%E2%80%99ha+raggiunta+al+secondo+tentativo%2C+e+tre+centimetri+sopra+il+qatariota+Mutaz+Barshim%2C+l%E2%80%99atleta+con+cui+aveva+condiviso+l%E2%80%99oro+alle+Olimpiadi+di+Tokyo.+La+vittoria+ai+Mondiali+era+l%E2%80%99unica+che+gli+mancava%3A+si+era+peraltro+qualificato+alla+finale+con+grande+difficolt%C3%A0+e+all%E2%80%99ultimo+salto+a+sua+disposizione+in+semifinale.%0ATamberi+ha+compiuto+31+anni+il+primo+giugno+e+quest%E2%80%99anno+aveva+gi%C3%A0+vinto+un+oro+individuale+ai+Giochi+europei+in+Polonia%2C+contribuendo+alla+vittoria+dell%E2%80%99Italia+nell%E2%80%99Europeo+a+squadre.+L%E2%80%99anno+scorso+a+Monaco%2C+in+Germania%2C+era+diventato+campione+europeo+per+la+seconda+volta+in+carriera+%28la+terza+contando+anche+gli+Europei+indoor%29.+Ai+Mondiali+il+suo+miglior+risultato+finora+era+il+quarto+posto+ottenuto+l%E2%80%99anno+scorso+a+Eugene%2C+negli+Stati+Uniti.+Nel+2016%2C+sempre+negli+Stati+Uniti%2C+aveva+per%C3%B2+vinto+l%E2%80%99oro+ai+Mondiali+indoor.%0A%0APer+l%E2%80%99Italia+quella+di+Tamberi+%C3%A8+la+prima+medaglia+d%E2%80%99oro+in+questa+edizione+dei+Mondiali+di+atletica+e+la+terza+complessiva%2C+dopo+l%E2%80%99argento+di+Leonardo+Fabbri+nel+getto+del+peso+e+il+bronzo+di+Antonella+Palmisano+nella+20+chilometri+di+marcia.+L%E2%80%99altro+campione+olimpico+in+carica+della+Nazionale+italiana%2C+Marcell+Jacobs%2C+non+%C3%A8+invece+riuscito+a+qualificarsi+alla+finale+dei+100+metri.">
+										IT5 Base for News Summarization
+									</a>
+								</div>
+							</div>
+							<div class="fragment">
+								<img src="img/transformer-summarization1.png" style="width: 100%; background-color: none">
+								<img src="img/transformer-summarization2.png" style="width: 100%; background-color: none">
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>ESEMPIO: Traduzione</h3>
+						<div class="fragment">
+							<img src="img/transformer-translation.png" style="width: 85%; background-color: none">
+						</div>
+						<a class="text-xs grey" target="_blank" href="https://huggingface.co/spaces/k1ngtai/nllb-translation">
+							NLLB distilled 600M (Meta)
+						</a>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Framework focalizzati su LLM</h3>
+						<div>Supporto nativo per LLM</div>
+						<div>Pipeline</div>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>LangChain</h3>
+            <div class="flex">
+							<div>
+								<img src="img/langchain-features.png" style="width: 100%; background-color: none">
+                <div class="text-xs grey">Documentazione LangChain</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Esempio per antonomasia</div>
+							<div>"Eccasso" di alternative</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>LangChain</h3>
+						<div class="flex">
+							<div>
+								<img src="img/langchain-concepts.png" style="width: 80%; background-color: none">
+								<div class="text-xs grey">Documentazione LangChain</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Sviluppo ancora piuttosto TUMULTUOSO</div>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section data-background="img/text-bg.jpg">
+					<section>
+						<h3>La generazione di testo</h3>
+
+						<aside class="notes">
+							<div>Campo più in vista ed esaltato attualmente</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>NLG tradizionale</h3>
+						<p class="">Produzione di template:</p>
+						<p class="">Meteo</p>
+						<p class="">Report finanziari</p>
+						<div class="invisible">.</div>
+						<p class="fragment">Didascalie</p>
+
+						<aside class="notes">
+							<div>Grammatiche generative</div>
+							<div>- Reti convolutive</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>I grandi modelli linguistici</h3>
+            <div class="flex">
+							<div>
+								<img src="img/transformer-families.png" style="width: 80%; background-color: none">
+                <div class="text-xs grey">Amatriain et al. - 2023</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Esplosione cambriana</div>
+							<div>BERT verde</div>
+							<div>GPT rosso</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>I grandi modelli linguistici</h3>
+            <div class="flex">
+							<div>
+								<img src="img/transformers-timeline.png" style="width: 70%; background-color: none">
+                <div class="text-xs grey">Amatriain et al. - 2023</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div>Piccoli ERRORI</div>
+							<div>celati da linguaggio eccellente</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>ESEMPIO: Sequenza di compiti</h3>
+            <div class="flex">
+							<div>
+								<img src="img/llama2-demo1.png" style="width: 80%; background-color: none">
+                <div class="text-xs grey">Amatriain et al. - 2023</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>ESEMPIO: Sequenza di compiti</h3>
+            <div class="flex">
+							<div>
+								<img src="img/llama2-demo2.png" style="width: 80%; background-color: none">
+                <div class="text-xs grey">Amatriain et al. - 2023</div>
+							</div>
+						</div>
+						<div class="fragment">Allucinazioni</div>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>ESEMPIO: Sequenza di compiti</h3>
+            <div class="flex">
+							<div>
+								<img src="img/llama2-demo3.png" style="width: 80%; background-color: none">
+                <div class="text-xs grey">Amatriain et al. - 2023</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>Vantaggi degli LLM</h3>
+						<div>Competenti, fluenti</div>
+						<div class="fragment">Versatili</div>
+						<div class="fragment">Poliglotti (o quasi)</div>
+
+						<aside class="notes">
+							<div>Competenti, fluenti</div>
+							<div>Versatili</div>
+							<div>Poliglotti - o quasi</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Limitazioni degli LLM</h3>
+						<div>Confabulano</div>
+						<div class="fragment">Non sanno contare</div>
+						<div class="fragment">Non sanno fare deduzioni</div>
+
+						<aside class="notes">
+							<div>Competenti solo in apparenza</div>
+							<div>Confabulano</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Limitazioni degli LLM</h3>
+            <div class="flex">
+							<div>
+								<img src="img/llm-vs-task-specific.png" style="width: 50%; background-color: none">
+								<div>
+									<a class="text-xs grey" target="_blank" href="https://www.linkedin.com/pulse/large-language-models-from-prototype-production-ines-montani/">
+										Ines Montani - Europython 2023
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>Bilancio (provvisorio!) degli LLM</h3>
+						<div class="fragment grow">Ispirazione creativa</div>
+						<div class="fragment grow">Bozze documenti</div>
+						<div class="fragment shrink">Recupero informazioni (ma deve essere validato)</div>
+						<div class="fragment fade-out">Supporto alla decisione</div>
+
+						<aside class="notes">
+							<div>Ispirazione creativa</div>
+							<div>Bozze documenti</div>
+							<div>Recupero info, ma va VALIDATO!</div>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section data-background="img/text-bg.jpg">
+					<section>
+						<h3>Protezione di dati personali e proprietà intellettuale</h3>
+
+						<aside class="notes">
+							<div>Tutto ciò che abbiamo usato</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Scenari d'uso dell'NLP</h3>
+						<p class="fragment fade-up">Cloud</p>
+						<p class="fragment fade-up">On prem</p>
+						<p class="fragment fade-up">Edge</p>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Funzionalità e condizioni - Confronto</h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Prestazioni</th>
+                  <th>Controllo dei dati</th>
+                  <th>Costi fissi</th>
+                  <th>Costi variabili</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="fragment">
+                  <td>Cloud</td>
+                  <td class="green">Massime</td>
+                  <td class="red">Minimo</td>
+                  <td class="green">Contenuti</td>
+                  <td class="red">Elevati</td>
+                </tr>
+                <tr class="fragment">
+                  <td>On-prem</td>
+                  <td>Medie-Elevate</td>
+                  <td>Limitato-Buono</td>
+                  <td class="red">Elevati (HW)</td>
+                  <td class="green">Contenuti</td>
+                </tr>
+                <tr class="fragment">
+                  <td>Edge</td>
+                  <td class="red">Minime</td>
+                  <td class="green">Massimo</td>
+                  <td class="red">Elevati (HW)</td>
+                  <td class="green">Contenuti</td>
+                </tr>
+              </tbody>
+            </table>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>Valutazioni</h3>
+						<div>Visti i trade-off tra le soluzioni...</div>
+
+            <table class="text-sm">
+              <tbody>
+                <tr class="fragment">
+                  <td>Cloud</td>
+                  <td>Sperimentazione o alto valore aggiunto. Bassa PI e privacy</td>
+                </tr>
+                <tr class="fragment">
+                  <td>On prem</td>
+                  <td>Ambiente di produzione per volumi sostenuti</td>
+                </tr>
+                <tr class="fragment">
+                  <td>Edge</td>
+                  <td>Compiti leggeri, focalizzazione su PI e privacy</td>
+                </tr>
+              </tbody>
+            </table>
+
+						<aside class="notes">
+							<div>Per andare in prod, buon modello offline</div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Valutazioni</h3>
+						<div>Il vantaggio dei modelli grandissimi è evanescente</div>
+            <div class="flex">
+							<div>
+								<img src="img/we-have-no-moat.png" style="width: 90%; background-color: none">
+								<div>
+									<a class="text-xs grey" target="_blank" href="https://www.semianalysis.com/p/google-we-have-no-moat-and-neither">
+										semianalysis-com - 4 maggio 2023
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section data-background="img/text-bg.jpg">
+					<section>
+						<h3>Grazie</h3>
+						<p class=""></p>
+            <div class="invisible">.</div>
+            <div class="text-sm">Trovate questa presentazione su </div>
+            <div class="text-sm"><a href="http://www.sidari.it/slides/nlp2023eng" target="_blank"> www.sidari.it/slides/nlp2023eng </a></div>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Contatti</h3>
+            <div class="invisible">.</div>
+            <div class="flex">
+							<div>
+								<!-- <div class="invisible">.</div> -->
+								<div><strong>Giorgio Sidari</strong></div>
+								<!-- <div class="invisible">.</div> -->
+								<div class=""><strong>Software &amp; ML Engineer</strong></div>
+								<div class="invisible">.</div>
+								<div class="text-sm">www.sidari.it</div>
+								<div class="text-sm">www.linkedin.com/in/sidari</div>
+								<div class="text-sm">@ideaferace@mastodon.uno</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Link</h3>
+            <div class="invisible">.</div>
+            <div class="flex">
+							<ul>
+								<li><strong>Huggingface</strong> <a href="https://huggingface.co" target="_blank">https://huggingface.co </a></li>
+								<li><strong>SpaCy</strong> <a href="https://spacy.io" target="_blank"> https://spacy.io </a></li>
+								<li><strong>Haystack</strong> <a href="https://docs.haystack.deepset.ai" target="_blank"> https://docs.haystack.deepset.ai </a></li>
+								<li><strong>LangChain</strong> <a href="https://docs.langchain.com" target="_blank"> https://docs.langchain.com </a></li>
+								<li><strong>Text Generation Web UI</strong> <a href="https://github.com/oobabooga/text-generation-webui" target="_blank"> https://github.com/oobabooga/text-generation-webui </a></li>
+							</ul>
+						</div>
+						
+						<aside class="notes">
+							<div></div>
+						</aside>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+    <script data-n-head="ssr" src="https://traffico.adat.to/js/plausible.js" defer="" data-domain="sidari.it"></script>
+	</body>
+</html>
