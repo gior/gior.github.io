@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Pillole di spaCy</title>
+
+		<link rel="stylesheet" href="./css/reveal.css">
+		<link rel="stylesheet" href="./css/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="./lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <script data-n-head="ssr" src="https://traffico.adat.to/js/plausible.js" defer="" data-domain="sidari.it"></script>
+	</head>
+	<style>
+    .caption {
+      font-size: .7em !important;
+      top: -.2em !important;
+    }
+
+    .tiny { font-size: .25em !important;}
+
+		.flex {
+			display: -webkit-flex; /* Safari */
+			display: flex;
+		}
+		.flex div {
+			-webkit-flex: 1;  /* Safari 6.1+ */
+			-ms-flex: 1;  /* IE 10 */
+			flex: 1;
+		}
+
+		.invisible { visibility: hidden }
+    .white { color: white }
+    .blue  { color: rgb(38, 139, 210) }
+    .green { color: greenyellow}
+    .red   { color: red }
+	</style>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="img/text-bg.jpg">
+					<section">
+						<h2>Pillole di spaCy</h2>
+						<h4></h4>
+            <br><br>  
+            <div style="margin-bottom:30px">AperiTech Milano Chatbots</div>
+            <div style="margin-bottom:30px">LUISS Enlab Hub</div>
+            <br><br>  
+            <span>5/11/2019</span><div style="display: inline-block; width: 250px"></div> <span>Giorgio Sidari</span>
+						<br>
+					</section>
+				</section>
+        <section>
+          <h2>Speaker</h2>
+          <div class="flex">
+            <div>
+              <img src="img/sidari.png" style="width: 50%; background-color: white">
+            </div>
+            <div>
+              <div class="invisible">.</div>
+              <div style="margin-bottom: .3em;"><strong>Giorgio Sidari</strong></div>
+              <!--<div class="invisible">.</div>-->
+              <div style="font-size: .6em;">( CONVERSATIONAL )<br/>SOFTWARE ENGINEER</strong></div>
+              <div class="invisible">.</div>
+              <div>NLP - Chatbots</div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </section>
+        <section data-background="img/text-bg.jpg">
+          <section>
+            <h2>spaCy</h2>
+            <h4>Libreria python per NLP</h4>
+            <ul style="list-style-type:none; margin-top: .3em">
+              <li class="fragment">"Ci piace pensare spaCy come il </li>
+              <img src="img/rails-logo.svg" style="border:0; width: 100%; background-color: white">
+              <li class="fragment">del Natural Language Processing."</li>
+              </ul>
+          </section>
+          <section>
+            <img src="img/spacy-arch.png" style="border:0; width: 60%;">
+            <div>
+              <a class="caption">https://spacy.io/api</a>
+            </div>  
+          </section>
+        </section>
+        <section data-background="img/text-bg.jpg">
+					<section>
+            <h2>1. Complessità dell'addestramento</h2>
+            <div class="fragment" style="line-height: 0;">
+                <img src="img/complex1.png" style="border:0; width: 45%; margin-bottom:0">
+            </div>
+            <div class="fragment" style="line-height: 0;">
+                <img src="img/complex2.png" style="border:0; width: 45%; margin:0">
+            </div>
+            <div class="fragment" style="line-height: 0;">
+                <img src="img/complex3.png" style="border:0; width: 45%; margin:0">
+            </div>
+            <div class="fragment" style="line-height: 0;">
+                <img src="img/complex4.png" style="border:0; width: 45%; margin:0">
+            </div>
+          </section>
+					<section>
+            <h3>GUI per gestire i casi</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/dialoglow-training.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+            <div>
+              <a class="caption">https://cloud.google.com/dialogflow/docs/training</a>
+            </div>  
+          </section>
+					<section>
+            <h3>Grammatica generativa</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/chatito.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+            <div>
+              <a class="caption">https://rodrigopivi.github.io/Chatito</a>
+            </div> 
+          </section>
+					<section>
+            <h3>Lemmatizzazione</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/lemmi.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+            <div>
+                <a href="/spacy/lemmi" class="caption">sidari.it/spacy/lemmi</a>
+            </div> 
+          </section>
+        </section>
+        <section data-background="img/text-bg.jpg">
+					<section>
+            <h2>2. Usare gli aggettivi possessivi</h2>
+            <div class="" style="line-height: 0;">
+                <img src="img/possessivo1.png" style="border:0; width: 45%; margin-bottom:0">
+            </div>
+          </section>
+					<section>
+            <h3>Uso del contesto</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/possessivo1bis.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+          </section>
+					<section>
+            <h3>displaCy</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/possessivo11.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+            <div>
+                <a href="/spacy/dipendenze" class="caption">sidari.it/spacy/dipendenze</a>
+            </div> 
+          </section>
+					<section>
+            <h3>Troviamo le dipendenze</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/possessivo12.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+            <div>
+                <a href="/spacy/dipendenze2" class="caption">sidari.it/spacy/dipendenze2</a>
+            </div> 
+          </section>
+					<section>
+            <h3>Uso del possessivo</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/possessivo2.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+          </section>
+        </section>
+        <section data-background="img/text-bg.jpg">
+					<section>
+            <h2>3. Vettori parola</h2>
+            <div class="" style="line-height: 0;">
+                <img src="img/vectors.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+            <div>
+              <a class="caption tiny">https://www.slideshare.net/SebastianRuder/fada-fast-document-aligner-with-word-embedding-pintu-lohar-debasis-ganguly-haithem-afli-andy-way-and-gareth-f-jones</a>
+            </div> 
+          </section>
+					<section>
+            <h3>Analogia</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/vettore-genere.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+          </section>
+					<section>
+            <h3>DEMO: caricamento vettori</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/fasttext.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+            <div>
+                <a href="/spacy/vettori" class="caption">sidari.it/spacy/vettori</a>
+            </div> 
+          </section>
+					<section>
+            <h3>DEMO - somma di vettori</h3>
+            <div class="" style="line-height: 0;">
+                <img src="img/somma-vettori.png" style="border:0; width: 70%; margin-bottom:0">
+            </div>
+          </section>
+        </section>
+        <section data-background="img/text-bg.jpg">
+					<section>
+            <h2>Link utili</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Tutorial</td>
+                  <td><a href="https://spacy.io/usage/spacy-101">spacy.io/usage/spacy-101</a></td>
+                </tr>
+                <tr>
+                  <td>Doc</td>
+                  <td><a href="https://spacy.io/usage/spacy-101">spacy.io/api</a></td>
+                </tr>
+                <tr>
+                  <td>Aggiornamenti</td>
+                  <td>@_inesmontani e @honnibal</td>
+                </tr>
+                <tr>
+                  <td>Approccio</td>
+                  <td>Keynote <a href="https://speakerdeck.com/inesmontani/let-them-write-code-keynote-pycon-india-2019">Let them write code</a></td>
+                </tr>
+                <tr>
+                  <td>Queste slide</td>
+                  <td><a href="/pillole-di-spacy">sidari.it/spacy/pillole</a></td>
+                </tr>
+              </tbody>
+            </table>
+            </section>
+        </section>
+        <section data-background="img/text-bg.jpg">
+          <h2>Grazie</h2>
+          <div>
+            <div class="invisible">.</div>
+            <div style="margin-bottom: .3em;"><strong class="white">Giorgio Sidari</strong></div>
+            <div style="margin-bottom: .3em;"><strong>@ideaferace</strong></div>
+            <div style="margin-bottom: .3em;"><strong>linkedin.com/in/sidari</strong></div>
+            <div></div>
+            <div></div>
+          </div>
+        </section>
+			</div>
+		</div>
+
+		<script src="./lib/js/head.min.js"></script>
+		<script src="./js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: './plugin/markdown/marked.js' },
+					{ src: './plugin/markdown/markdown.js' },
+					{ src: './plugin/notes/notes.js', async: true },
+					{ src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
